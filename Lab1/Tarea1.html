@@ -1,0 +1,86 @@
+
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Tarea 1</title>
+        
+    </head>
+<body>
+<h1>Tarea 1</h1>
+
+<form>
+  <div>
+    Introduce 2 numeros:
+    <input type = "number" id = "n1" >
+            <select name="operadores" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type = "number" id = "n2">
+            </div>
+            <br>
+            <div>
+               Valor esperado:
+<input type = "number" name="esperado" id="esp">
+               <input type = "text" readonly id = "lblres"></input>
+            </div>
+            <input type="button" value="Comprobar" onClick="comprobar()">
+            <br>
+            
+
+  
+                    
+            
+</form>
+        <script>
+            
+            function comprobar(){
+                var n1 = document.getElementById("n1").value;
+                var n2 = document.getElementById("n2").value;
+                var sim = document.getElementById("op").selectedIndex;
+                var esp = parseInt(document.getElementById("esp").value);
+                var lblress = document.getElementById("lblres");
+                console.log("n1="+n1+" n2="+n2+" esp="+esp+" sim="+sim)
+                switch(parseInt(sim)){
+
+                    case 0:
+                        res=parseInt(n1)+parseInt(n2);
+                        console.log(res)
+                        
+                        if(res==esp){console.log("son iguales"); lblress.value= "CORRECTO"; break;}
+                        if(res!=esp){console.log("son diferentes"); lblress.value= "INCORRECTO"; break;}
+                       
+                    case 1:
+                        res1 = parseInt(n1)-parseInt(n2);
+                        if(res1==esp){ lblress.value="CORRECTO"; break;}
+                        if(res1!=esp){ lblress.value="INCORRECTO"; break;}
+                        
+                       
+                    case 2:
+                        res2 = parseInt(n1)*parseInt(n2);
+                       if(res2==esp){ lblress.value="CORRECTO"; break;}
+                       if(res2!=esp) {lblress.value="INCORRECTO"; break;}
+                        
+                        
+                    case 3:
+                        res3 = parseInt(n1)/parseInt(n2);
+                        if(res3==esp){ lblress.value="CORRECTO"; break;}
+                        if(res3!=esp) {lblress.value="INCORRECTO"; break; }            
+                
+                     default:
+                
+                }
+            
+            }
+
+            function restalbl(){
+                var lbl = document.getElementById("lblres")
+                lbl.innerText="";
+            }
+            
+        </script>
+                  
+</body>
+</html>
