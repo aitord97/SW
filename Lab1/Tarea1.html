@@ -66,6 +66,7 @@
                         
                     case 3:
                         res3 = parseInt(n1)/parseInt(n2);
+                        if(n2==0){lblress.value="ERROR."; break;}
                         if(res3==esp){ lblress.value="CORRECTO"; break;}
                         if(res3!=esp) {lblress.value="INCORRECTO"; break; }            
                 
