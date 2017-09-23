@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Tarea2</title>
+        
+    </head>
+<body>
+<h1>Tarea 1</h1>
+
+<form>
+  <div>
+    Introduce 2 numeros:
+    <input type = "number" id = "n1" >
+            <select name="operadores" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type = "number" id = "n2">
+            </div>
+            <br>
+            <div>
+               Valor esperado:
+            <input type = "number" name="esperado" id="esp">
+               <input type = "text" readonly id = "lblres">
+            </div>
+            <input type="button" value="Comprobar"id = "btn" >
+            <br>
+            
+
+  
+                    
+            
+</form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <script>
+            
+      	  	  $("#btn").click(function(){
+      	  	  console.log("HOLA")
+        	var n1 = $("#n1").val();
+        	var n2 = $("#n2").val();
+        	var esp = $("#esp").val();
+        	var sim = $("#op").val();
+        	console.log(sim)
+        
+        	switch(sim){
+        		case "+":
+        		    res = parseInt(n1)+parseInt(n2);
+        			if(res==esp){$("#lblres").val("¡CORRECTO!"); break;}
+        			else{$("#lblres").val("INCORRECTO!"); break;}
+        		case "-":
+        		    res = parseInt(n1)-parseInt(n2);
+        			if(res==esp){$("#lblres").val("¡CORRECTO!"); break;}
+        			else{$("#lblres").val("INCORRECTO!"); break;}
+        		case "*":
+        		    res = parseInt(n1)*parseInt(n2);
+        			if(res==esp){$("#lblres").val("¡CORRECTO!"); break;}
+        			else{$("#lblres").val("INCORRECTO!"); break;}
+        		case "/":
+        		    res = parseInt(n1)/parseInt(n2);
+        			if(n2==0){$("#lblres").val("ERROR!!"); break;}
+        			if(res==esp){$("#lblres").val("¡CORRECTO!"); break;}
+        			else{$("#lblres").val("INCORRECTO!"); break;}
+
+        	}
+        });
+        
+
+            
+        </script>
+                  
+</body>
+</html>
