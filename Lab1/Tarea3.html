@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Tarea3</title>
+        
+    </head>
+<body>
+<h1>Tarea 3</h1>
+
+<form>
+  <div>
+    Introduce una expresión matemática:
+    <input type = "text" id = "expr" >
+            </div>
+            <br>
+            <div>
+               Valor esperado:
+            <input type = "number" name="esperado" id="esp">
+             <label id="label"></label>
+               <br>
+               <br>
+               </div>
+            <div>
+            <input type="reset" id="rst">
+            </div>
+            <br>
+            
+
+  
+                    
+            
+</form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js"></script>
+
+        <script>
+            
+      	  	  $("#esp").keyup(function(){
+      	  	  console.log("HOLA")
+        	var expr = $("#expr").val();
+        	var esp = $("#esp").val();
+        	var res = math.eval(expr);
+        	console.log(res)
+        	console.log(esp)
+        	if(esp==res){$("#label").text("¡¡CORRECTO!!");$("#label").css({"color":"green","font-size":"1.3em"})}
+        	else{$("#label").text("INCORRECTO");$("#label").css({"color":"red","font-size":"1.3em"})
+        	}
+        	if(esp==""){$("#label").text("¿¿??");$("#label").css({"color":"orange","font-size":"1.3em"})
+        	}
+        	    
+        	});
+        
+
+            
+        </script>
+                  
+</body>
+</html>
